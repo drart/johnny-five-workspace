@@ -1,0 +1,23 @@
+<html>
+    <body>
+	<p> copy and paste these into the console to try communication
+        <p>pubnub.publish({channel:'hello', message:'fjfjfjf'});
+
+        <p>pubnub.publish({channel:'hello', message:{'jfjfj':'fjfj'}});
+        <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.3.1.min.js"></script>
+        <script>
+            var pubnub = new PubNub({
+                subscribeKey: "sub-c-027aacee-b1a8-11e6-a071-02ee2ddab7fe",
+                publishKey: "pub-c-91ae968c-c67b-4c85-afda-bbf9cf78998a"
+            });
+
+            pubnub.subscribe({ channels: ['hello'] });
+            pubnub.addListener({
+                message: function(m){
+                    if(m.channel === 'hello')
+                        console.log(m.message);
+                }
+            });
+        </script>
+    </body>
+</html>

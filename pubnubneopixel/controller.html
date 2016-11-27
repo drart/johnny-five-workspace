@@ -1,0 +1,33 @@
+<html>
+    <body>
+        <button onclick="off()">Lights off</button>
+        <button onclick="red()">Red Lights</button>
+        <button onclick="blue()">Blue Lights</button>
+        <button onclick="green()">Green Lights</button>
+
+        <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.3.1.min.js"></script>
+        <script>
+            var pubnub = new PubNub({
+                subscribeKey: "sub-c-027aacee-b1a8-11e6-a071-02ee2ddab7fe",
+                publishKey: "pub-c-91ae968c-c67b-4c85-afda-bbf9cf78998a"
+            });
+
+
+            function off(){
+               pubnub.publish({channel:'neopixel', message:'off'});
+            };
+
+            function red(){
+               pubnub.publish({channel:'neopixel', message:'red'});
+            };
+
+            function blue(){
+               pubnub.publish({channel:'neopixel', message:'blue'});
+            };
+            
+            function green(){
+               pubnub.publish({channel:'neopixel', message:'green'});
+            };
+        </script>
+    </body>
+</html>
