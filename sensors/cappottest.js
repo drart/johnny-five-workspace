@@ -21,15 +21,15 @@ board.on("ready", function() {
 
   buttons.on("press", function(button) {
     console.log("Pressed: ", button.pin);
-    motor.start();
+    //motor.start();
   });
 
   buttons.on("release", function(button) {
     console.log("Released: ", button.pin);
-    motor.stop();
+    //motor.stop();
   });
 
   motor = new five.Motor({
-          pin: 3
+          pin: 10
     });
 });
