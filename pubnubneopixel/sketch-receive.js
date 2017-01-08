@@ -21,7 +21,7 @@ pubnub.addListener({
             case 'hold':
                 rect(100,100,100,100);
                 break;
-            case default:
+            default:
                 break;
         }
     }
